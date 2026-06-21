@@ -1,0 +1,70 @@
+# depslib dependency file v1.0
+1780487260 source:/home/aluno/NASA/caverna.c
+	<stdio.h>
+	<stdlib.h>
+	"caverna.h"
+
+1780487354 /home/aluno/NASA/caverna.h
+
+1780487286 source:/home/aluno/NASA/game_state.c
+	<stdio.h>
+	<stdlib.h>
+	"game_state.h"
+
+1780487364 /home/aluno/NASA/game_state.h
+	"caverna.h"
+
+1781786462 source:/home/aluno/NASA/main-interativa.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"game_state.h"
+
+1780487270 source:/home/aluno/NASA/decisor_aleatorio.c
+	<stdlib.h>
+	"decisor_aleatorio.h"
+
+1781788240 /home/aluno/NASA/decisor_aleatorio.h
+	"game_state.h"
+
+1781788461 source:/home/aluno/NASA/main-automatica.c
+	<stdio.h>
+	<stdlib.h>
+	"game_state.h"
+	"decisor_aleatorio.h"
+
+1781788240 source:/home/aluno/NASA/t3-2877597-2877511-2883422.c
+	<stdlib.h>
+	"decisor_aleatorio.h"
+
+1780472886 source:c:\dev\trabalho3\nasa\game_state.c
+	<stdio.h>
+	<stdlib.h>
+	"game_state.h"
+
+1780472964 c:\dev\trabalho3\nasa\game_state.h
+	"caverna.h"
+
+1780472954 c:\dev\trabalho3\nasa\caverna.h
+
+1782065092 source:c:\dev\trabalho3\nasa\main-automatica.c
+	<stdio.h>
+	<stdlib.h>
+	"game_state.h"
+	"t3-2877597-2877511-2883422.h"
+
+1781773840 c:\dev\trabalho3\nasa\decisor_aleatorio.h
+	"game_state.h"
+
+1780472860 source:c:\dev\trabalho3\nasa\caverna.c
+	<stdio.h>
+	<stdlib.h>
+	"caverna.h"
+
+1782069617 source:c:\dev\trabalho3\nasa\t3-2877597-2877511-2883422.c
+	<stdlib.h>
+	"t3-2877597-2877511-2883422.h"
+
+1782065213 c:\dev\trabalho3\nasa\t3-2877597-2877511-2883422.h
+	"game_state.h"
+
