@@ -23,6 +23,7 @@ typedef struct
     int** matriz_risco;
     int passos;
     Coordenada* caminho_do_robo;
+    int** lab;
 
 } Decisor;
 

@@ -4,12 +4,16 @@
 	<stdlib.h>
 	"caverna.h"
 
+1780472860 "
+
 1780487354 /home/aluno/NASA/caverna.h
 
 1780487286 source:/home/aluno/NASA/game_state.c
 	<stdio.h>
 	<stdlib.h>
 	"game_state.h"
+
+1782065213 e.h"
 
 1780487364 /home/aluno/NASA/game_state.h
 	"caverna.h"
@@ -23,6 +27,8 @@
 1780487270 source:/home/aluno/NASA/decisor_aleatorio.c
 	<stdlib.h>
 	"decisor_aleatorio.h"
+
+1781788240 leatorio.h"
 
 1781788240 /home/aluno/NASA/decisor_aleatorio.h
 	"game_state.h"
@@ -53,6 +59,8 @@
 	"game_state.h"
 	"t3-2877597-2877511-2883422.h"
 
+1782069617 7-2877511-2883422.h"
+
 1781773840 c:\dev\trabalho3\nasa\decisor_aleatorio.h
 	"game_state.h"
 
@@ -67,4 +75,32 @@
 
 1782065213 c:\dev\trabalho3\nasa\t3-2877597-2877511-2883422.h
 	"game_state.h"
+
+1782070036 source:/home/aluno/NASA/Trabalho3-main/NASA/caverna.c
+	<stdio.h>
+	<stdlib.h>
+	"caverna.h"
+
+1782070036 /home/aluno/NASA/Trabalho3-main/NASA/caverna.h
+
+1782070036 source:/home/aluno/NASA/Trabalho3-main/NASA/game_state.c
+	<stdio.h>
+	<stdlib.h>
+	"game_state.h"
+
+1782070036 /home/aluno/NASA/Trabalho3-main/NASA/game_state.h
+	"caverna.h"
+
+1782142867 source:/home/aluno/NASA/Trabalho3-main/NASA/t3-2877597-2877511-2883422.c
+	<stdlib.h>
+	"t3-2877597-2877511-2883422.h"
+
+1782142771 /home/aluno/NASA/Trabalho3-main/NASA/t3-2877597-2877511-2883422.h
+	"game_state.h"
+
+1782139720 source:/home/aluno/NASA/Trabalho3-main/NASA/main-automatica.c
+	<stdio.h>
+	<stdlib.h>
+	"game_state.h"
+	"t3-2877597-2877511-2883422.h"
 

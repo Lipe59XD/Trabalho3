@@ -13,8 +13,8 @@
 
 /*============================================================================*/
 
-#define PASSO_A_PASSO 1 // Flag que diz se o progresso do robô será mostrado passo-a-passo. Mude para 0 se for rodar muitos testes!
-#define CLEAR_SCREEN_CMD "cls" // No Linux, mude para "clear".
+#define PASSO_A_PASSO 0 // Flag que diz se o progresso do robô será mostrado passo-a-passo. Mude para 0 se for rodar muitos testes!
+#define CLEAR_SCREEN_CMD "clear" // No Linux, mude para "clear".
 
 /* Um modificador para a semente usada pelo gerador de números aleatórios na
  * hora de criar um tabuleiro. Todos os trabalhos usarão os mesmos tabuleiros,

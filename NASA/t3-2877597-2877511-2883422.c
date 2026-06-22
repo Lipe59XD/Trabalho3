@@ -34,6 +34,9 @@ Decisor* criaDecisor (int altura, int largura)
             decisor->matriz_risco[i][j] = 1;
     }
 
+    decisor->lab = (int**)malloc(sizeof(int*)*largura);
+    for(i=0; i<altura; i++)
+        decisor->lab[i] = (int*)malloc(sizeof(int)*largura);
     //Aloca dinamicamento a matriz caminho_do_robo, que contem o historico de posicoes do robo
     //O tamanho do vetor eh no maximo a quantidade de passos ate acabar a bateria
     decisor->caminho_do_robo = (Coordenada*)malloc(sizeof(Coordenada)*decisor->altura*decisor->largura*20);
@@ -53,6 +56,9 @@ void destroiDecisor (Decisor* d)
     int i;
     for(i=0; i<(d->altura); i++)
         free(d->matriz_risco[i]);
+    for(i=0; i<(d->altura); i++)
+        free(d->lab[i]);
+    free(d->lab);
     free(d->matriz_risco);
     free(d->caminho_do_robo);
     free(d);
@@ -72,7 +78,6 @@ void destroiDecisor (Decisor* d)
 int proximoMovimento (Decisor* d, Coordenada pos, int agua, int n_lava)
 {
     int i, linha, coluna, acumulado, sorteado, soma_pesos, encontrou_agua;
-    encontrou_agua = 0;
     soma_pesos = 0;
     int pesos[] = {0, 0, 0, 0, 0};
     linha = pos.y;
@@ -80,7 +85,7 @@ int proximoMovimento (Decisor* d, Coordenada pos, int agua, int n_lava)
     d->matriz_risco[linha][coluna] = 0;
     d->caminho_do_robo[d->passos] = pos;
     d->passos++;
-    if(!encontrou_agua)
+    if(!agua)
     {
         if(linha != 0 && d->matriz_risco[linha-1][coluna] != 0)
         {
@@ -107,14 +112,16 @@ int proximoMovimento (Decisor* d, Coordenada pos, int agua, int n_lava)
             soma_pesos+=pesos[DIREITA];
         }
         acumulado = 0;
-        sorteado = 1+(rand()%soma_pesos);
+        if(soma_pesos!= 0)
+            sorteado = 1+(rand()%soma_pesos);
+        else    return 1+(rand()%4);
+
         for(i=1; i<5; i++)
         {
             acumulado += pesos[i];
             if(sorteado < acumulado)
                 return i;
         }
-        return 1+(rand()%4);
     }
     else
     {
@@ -124,6 +131,81 @@ int proximoMovimento (Decisor* d, Coordenada pos, int agua, int n_lava)
 
 }
 
+void constroi_caminho(Decisor* d, int altura, int largura)
+{
+    int i, j;
+    for(i=0; i<altura; i++)
+    {
+        for(j=0; j<largura; j++)
+        {
+            if(d->matriz_risco[i][j] != 0)
+                d->lab[i][j] = -2; //-2 representa a parede
+            else d->lab[i][j] = 0;
+        }
+    }
+
+}
+
+/*void preencheMatrizCusto (int** lab, Coordenada pos_alvo)
+{
+    int i, x, y, custo, pos_atual_da_fila, qtd_adicionada;
+    qtd_adicionada = 1;
+    pos_atual_da_fila = 0;
+    custo = 1;
+    Coordenada* fila;
+    Coordenada2D adiciona;
+    //fila das coordenadas a serem preenchidas
+    fila = (Coordenada2D*)malloc(sizeof(Coordenada2D)*BUFLEN);
+    fila[0] = pos_queijo; //coloca o primeiro componente da fila como a posicao do queijo
+    lab->mat[pos_queijo.y][pos_queijo.x] = 0; //inicializa a posicao do queijo como zero
+
+    for(i=0; i<=pos_atual_da_fila; i++)//percorre os elementos da fila
+    {
+        qtd_adicionada = 0;
+        x = fila[i].y;
+        y = fila[i].x;
+        custo = lab->mat[x][y];
+
+        if(lab->mat[x+1][y] == -1)
+        {
+            lab->mat[x+1][y] = custo+1;
+            qtd_adicionada++;
+            pos_atual_da_fila++;
+            adiciona.x = y;
+            adiciona.y = x+1;
+            fila[pos_atual_da_fila] = adiciona;
+        }
+        if(lab->mat[x-1][y] == -1)
+        {
+            lab->mat[x-1][y] = custo+1;
+            qtd_adicionada++;
+            pos_atual_da_fila++;
+            adiciona.x = y;
+            adiciona.y = x-1;
+            fila[pos_atual_da_fila] = adiciona;
+        }
+        if(lab->mat[x][y+1] == -1)
+        {
+            lab->mat[x][y+1] = custo+1;
+            qtd_adicionada++;
+            pos_atual_da_fila++;
+            adiciona.x = y+1;
+            adiciona.y = x;
+            fila[pos_atual_da_fila] = adiciona;
+        }
+        if(lab->mat[x][y-1] == -1)
+        {
+            lab->mat[x][y-1] = custo+1;
+            qtd_adicionada++;
+            pos_atual_da_fila++;
+            adiciona.x = y-1;
+            adiciona.y = x;
+            fila[pos_atual_da_fila] = adiciona;
+        }
+    }
+   free(fila);
+
+}*/
 /*============================================================================*/
 
 
