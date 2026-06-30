@@ -1,0 +1,30 @@
+# depslib dependency file v1.0
+1780487260 source:c:\dev\trabalho3_default\trabalho3_default\caverna.c
+	<stdio.h>
+	<stdlib.h>
+	"caverna.h"
+
+1780487354 c:\dev\trabalho3_default\trabalho3_default\caverna.h
+
+1782691140 source:c:\dev\trabalho3_default\trabalho3_default\decisor_aleatorio.c
+	<stdio.h>
+	<stdlib.h>
+	"decisor_aleatorio.h"
+
+1782683433 c:\dev\trabalho3_default\trabalho3_default\decisor_aleatorio.h
+	"game_state.h"
+
+1780487364 c:\dev\trabalho3_default\trabalho3_default\game_state.h
+	"caverna.h"
+
+1780487286 source:c:\dev\trabalho3_default\trabalho3_default\game_state.c
+	<stdio.h>
+	<stdlib.h>
+	"game_state.h"
+
+1782786232 source:c:\dev\trabalho3_default\trabalho3_default\main-automatica.c
+	<stdio.h>
+	<stdlib.h>
+	"game_state.h"
+	"decisor_aleatorio.h"
+
